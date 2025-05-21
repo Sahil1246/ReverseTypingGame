@@ -1,0 +1,143 @@
+General body styling
+*{
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Poppins', sans-serif; /* Use a stylish font */
+    background: none; /* Remove the gradient background */
+    overflow: hidden; /* Prevent scrolling due to the game canvas */
+    /* Default text color */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Container for the game */
+  .game-container {
+    background: rgba(255, 255, 255, 0.1); /* Transparent white */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    width: 400px;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  /* Logo styling */
+  .logo {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+  }
+  
+  /* Input fields styling */
+  input[type="text"] {
+    padding: 50px;
+    font-size: 100px;
+    font-family: 'Poppins', sans-serif;
+    color: brown;
+    border: none;
+    border-radius: 50px;
+    margin: 10px 0;
+    width: 70%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Button styling */
+  button {
+    padding: 10px 20px;
+    font-size: 100px;
+    font-family: 'Poppins', sans-serif;
+    background: #4caf50;
+    color: rgb(235, 231, 231);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #45a049;
+  }
+  
+  /* Timer and feedback styling */
+  h3 {
+    font-size: 100px;
+    margin: 10px 0;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  h3.green {
+    color: green;
+  }
+  
+  h3.red {
+    color: red;
+  }
+  
+  .timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffcc00; /* Yellow color for the timer */
+    margin: 20px 0;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .game-container {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    input[type="text"] {
+      font-size: 16px;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  }
+  
+  @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .blink {
+    animation: blink var(--blink-speed, 1s) step-start infinite; /* Use a CSS variable for speed */
+  }
+  
+  .App video{
+    position:absolute;
+    z-index: -1;
+  }
